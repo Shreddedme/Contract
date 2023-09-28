@@ -1,0 +1,1513 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Hello API Platform",
+        "description": "",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "/",
+            "description": ""
+        }
+    ],
+    "paths": {
+        "/api/v2/pet/create": {
+            "post": {
+                "operationId": "api_petcreate_post",
+                "tags": [
+                    "PetDto"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "PetDto resource created",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PetDto.jsonld-read"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PetDto-read"
+                                }
+                            },
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PetDto-read"
+                                }
+                            }
+                        },
+                        "links": {}
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "422": {
+                        "description": "Unprocessable entity"
+                    }
+                },
+                "summary": "Creates a PetDto resource.",
+                "description": "Creates a PetDto resource.",
+                "parameters": [],
+                "requestBody": {
+                    "description": "The new PetDto resource",
+                    "content": {
+                        "application/ld+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PetDto.jsonld-write_patch"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PetDto-write_patch"
+                            }
+                        },
+                        "text/html": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PetDto-write_patch"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "deprecated": false
+            },
+            "parameters": []
+        },
+        "/api/v2/pet/update": {
+            "put": {
+                "operationId": "api_petupdate_put",
+                "tags": [
+                    "PetDto"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "PetDto resource updated",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PetDto.jsonld-read"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PetDto-read"
+                                }
+                            },
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PetDto-read"
+                                }
+                            }
+                        },
+                        "links": {}
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "422": {
+                        "description": "Unprocessable entity"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Replaces the PetDto resource.",
+                "description": "Replaces the PetDto resource.",
+                "parameters": [],
+                "requestBody": {
+                    "description": "The updated PetDto resource",
+                    "content": {
+                        "application/ld+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PetDto.jsonld-put"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PetDto-put"
+                            }
+                        },
+                        "text/html": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PetDto-put"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "deprecated": false
+            },
+            "parameters": []
+        },
+        "/api/v2/pet/{id}": {
+            "get": {
+                "operationId": "api_pet_id_get",
+                "tags": [
+                    "PetDto"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "PetDto resource",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PetDto.jsonld-read"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PetDto-read"
+                                }
+                            },
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PetDto-read"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Retrieves a PetDto resource.",
+                "description": "Retrieves a PetDto resource.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "PetDto identifier",
+                        "required": true,
+                        "deprecated": false,
+                        "allowEmptyValue": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "explode": false,
+                        "allowReserved": false
+                    }
+                ],
+                "deprecated": false
+            },
+            "delete": {
+                "operationId": "api_pet_id_delete",
+                "tags": [
+                    "PetDto"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "PetDto resource deleted"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Removes the PetDto resource.",
+                "description": "Removes the PetDto resource.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Pet identifier",
+                        "required": true,
+                        "deprecated": false,
+                        "allowEmptyValue": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "explode": false,
+                        "allowReserved": false
+                    }
+                ],
+                "deprecated": false
+            },
+            "parameters": []
+        },
+        "/api/v2/pets": {
+            "get": {
+                "operationId": "api_pets_get_collection",
+                "tags": [
+                    "PetDto"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "PetDto collection",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "hydra:member": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Pet.jsonld"
+                                            }
+                                        },
+                                        "hydra:totalItems": {
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "hydra:view": {
+                                            "type": "object",
+                                            "properties": {
+                                                "@id": {
+                                                    "type": "string",
+                                                    "format": "iri-reference"
+                                                },
+                                                "@type": {
+                                                    "type": "string"
+                                                },
+                                                "hydra:first": {
+                                                    "type": "string",
+                                                    "format": "iri-reference"
+                                                },
+                                                "hydra:last": {
+                                                    "type": "string",
+                                                    "format": "iri-reference"
+                                                },
+                                                "hydra:previous": {
+                                                    "type": "string",
+                                                    "format": "iri-reference"
+                                                },
+                                                "hydra:next": {
+                                                    "type": "string",
+                                                    "format": "iri-reference"
+                                                }
+                                            },
+                                            "example": {
+                                                "@id": "string",
+                                                "type": "string",
+                                                "hydra:first": "string",
+                                                "hydra:last": "string",
+                                                "hydra:previous": "string",
+                                                "hydra:next": "string"
+                                            }
+                                        },
+                                        "hydra:search": {
+                                            "type": "object",
+                                            "properties": {
+                                                "@type": {
+                                                    "type": "string"
+                                                },
+                                                "hydra:template": {
+                                                    "type": "string"
+                                                },
+                                                "hydra:variableRepresentation": {
+                                                    "type": "string"
+                                                },
+                                                "hydra:mapping": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "@type": {
+                                                                "type": "string"
+                                                            },
+                                                            "variable": {
+                                                                "type": "string"
+                                                            },
+                                                            "property": {
+                                                                "type": "string",
+                                                                "nullable": true
+                                                            },
+                                                            "required": {
+                                                                "type": "boolean"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": [
+                                        "hydra:member"
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Pet"
+                                    }
+                                }
+                            },
+                            "text/html": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Pet"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": "Retrieves the collection of PetDto resources.",
+                "description": "Retrieves the collection of PetDto resources.",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The collection page number",
+                        "required": false,
+                        "deprecated": false,
+                        "allowEmptyValue": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "style": "form",
+                        "explode": false,
+                        "allowReserved": false
+                    },
+                    {
+                        "name": "itemsPerPage",
+                        "in": "query",
+                        "description": "The number of items per page",
+                        "required": false,
+                        "deprecated": false,
+                        "allowEmptyValue": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": 10,
+                            "minimum": 0
+                        },
+                        "style": "form",
+                        "explode": false,
+                        "allowReserved": false
+                    }
+                ],
+                "deprecated": false
+            },
+            "parameters": []
+        },
+        "/api/v2/user/create": {
+            "post": {
+                "operationId": "api_usercreate_post",
+                "tags": [
+                    "UserDto"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "UserDto resource created",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserDto.jsonld-read"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserDto-read"
+                                }
+                            },
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserDto-read"
+                                }
+                            }
+                        },
+                        "links": {}
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "422": {
+                        "description": "Unprocessable entity"
+                    }
+                },
+                "summary": "Creates a UserDto resource.",
+                "description": "Creates a UserDto resource.",
+                "parameters": [],
+                "requestBody": {
+                    "description": "The new UserDto resource",
+                    "content": {
+                        "application/ld+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserDto.jsonld-write"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserDto-write"
+                            }
+                        },
+                        "text/html": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserDto-write"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "deprecated": false
+            },
+            "parameters": []
+        },
+        "/api/v2/user/update": {
+            "put": {
+                "operationId": "api_userupdate_put",
+                "tags": [
+                    "UserDto"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "UserDto resource updated",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User.jsonld"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            },
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        },
+                        "links": {}
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "422": {
+                        "description": "Unprocessable entity"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Replaces the UserDto resource.",
+                "description": "Replaces the UserDto resource.",
+                "parameters": [],
+                "requestBody": {
+                    "description": "The updated UserDto resource",
+                    "content": {
+                        "application/ld+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User.jsonld"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        },
+                        "text/html": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "deprecated": false
+            },
+            "parameters": []
+        },
+        "/api/v2/user/{id}": {
+            "get": {
+                "operationId": "api_user_id_get",
+                "tags": [
+                    "UserDto"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "UserDto resource",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserDto.jsonld-read"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserDto-read"
+                                }
+                            },
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserDto-read"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Retrieves a UserDto resource.",
+                "description": "Retrieves a UserDto resource.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "UserDto identifier",
+                        "required": true,
+                        "deprecated": false,
+                        "allowEmptyValue": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "explode": false,
+                        "allowReserved": false
+                    }
+                ],
+                "deprecated": false
+            },
+            "delete": {
+                "operationId": "api_user_id_delete",
+                "tags": [
+                    "UserDto"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "UserDto resource deleted"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Removes the UserDto resource.",
+                "description": "Removes the UserDto resource.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User identifier",
+                        "required": true,
+                        "deprecated": false,
+                        "allowEmptyValue": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "explode": false,
+                        "allowReserved": false
+                    }
+                ],
+                "deprecated": false
+            },
+            "parameters": []
+        },
+        "/api/v2/users": {
+            "get": {
+                "operationId": "api_users_get_collection",
+                "tags": [
+                    "UserDto"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "UserDto collection",
+                        "content": {
+                            "application/ld+json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "hydra:member": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/User.jsonld"
+                                            }
+                                        },
+                                        "hydra:totalItems": {
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "hydra:view": {
+                                            "type": "object",
+                                            "properties": {
+                                                "@id": {
+                                                    "type": "string",
+                                                    "format": "iri-reference"
+                                                },
+                                                "@type": {
+                                                    "type": "string"
+                                                },
+                                                "hydra:first": {
+                                                    "type": "string",
+                                                    "format": "iri-reference"
+                                                },
+                                                "hydra:last": {
+                                                    "type": "string",
+                                                    "format": "iri-reference"
+                                                },
+                                                "hydra:previous": {
+                                                    "type": "string",
+                                                    "format": "iri-reference"
+                                                },
+                                                "hydra:next": {
+                                                    "type": "string",
+                                                    "format": "iri-reference"
+                                                }
+                                            },
+                                            "example": {
+                                                "@id": "string",
+                                                "type": "string",
+                                                "hydra:first": "string",
+                                                "hydra:last": "string",
+                                                "hydra:previous": "string",
+                                                "hydra:next": "string"
+                                            }
+                                        },
+                                        "hydra:search": {
+                                            "type": "object",
+                                            "properties": {
+                                                "@type": {
+                                                    "type": "string"
+                                                },
+                                                "hydra:template": {
+                                                    "type": "string"
+                                                },
+                                                "hydra:variableRepresentation": {
+                                                    "type": "string"
+                                                },
+                                                "hydra:mapping": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "@type": {
+                                                                "type": "string"
+                                                            },
+                                                            "variable": {
+                                                                "type": "string"
+                                                            },
+                                                            "property": {
+                                                                "type": "string",
+                                                                "nullable": true
+                                                            },
+                                                            "required": {
+                                                                "type": "boolean"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": [
+                                        "hydra:member"
+                                    ]
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/User"
+                                    }
+                                }
+                            },
+                            "text/html": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/User"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": "Retrieves the collection of UserDto resources.",
+                "description": "Retrieves the collection of UserDto resources.",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The collection page number",
+                        "required": false,
+                        "deprecated": false,
+                        "allowEmptyValue": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "style": "form",
+                        "explode": false,
+                        "allowReserved": false
+                    },
+                    {
+                        "name": "itemsPerPage",
+                        "in": "query",
+                        "description": "The number of items per page",
+                        "required": false,
+                        "deprecated": false,
+                        "allowEmptyValue": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": 10,
+                            "minimum": 0
+                        },
+                        "style": "form",
+                        "explode": false,
+                        "allowReserved": false
+                    }
+                ],
+                "deprecated": false
+            },
+            "parameters": []
+        }
+    },
+    "components": {
+        "schemas": {
+            "Pet": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "id": {
+                        "readOnly": true,
+                        "type": "integer"
+                    },
+                    "name": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "type": "string"
+                    },
+                    "description": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createdBy": {
+                        "type": "integer"
+                    },
+                    "updatedBy": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "owner": {
+                        "$ref": "#/components/schemas/User"
+                    }
+                },
+                "required": [
+                    "name",
+                    "description"
+                ]
+            },
+            "Pet.jsonld": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "@context": {
+                        "readOnly": true,
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "@vocab": {
+                                        "type": "string"
+                                    },
+                                    "hydra": {
+                                        "type": "string",
+                                        "enum": [
+                                            "http://www.w3.org/ns/hydra/core#"
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "@vocab",
+                                    "hydra"
+                                ],
+                                "additionalProperties": true
+                            }
+                        ]
+                    },
+                    "@id": {
+                        "readOnly": true,
+                        "type": "string"
+                    },
+                    "@type": {
+                        "readOnly": true,
+                        "type": "string"
+                    },
+                    "id": {
+                        "readOnly": true,
+                        "type": "integer"
+                    },
+                    "name": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "type": "string"
+                    },
+                    "description": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createdBy": {
+                        "type": "integer"
+                    },
+                    "updatedBy": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "owner": {
+                        "$ref": "#/components/schemas/User.jsonld"
+                    }
+                },
+                "required": [
+                    "name",
+                    "description"
+                ]
+            },
+            "PetDto-put": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "id": {
+                        "example": 1,
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "name": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "Cat",
+                        "type": "string"
+                    },
+                    "description": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "Lazy",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name",
+                    "description"
+                ]
+            },
+            "PetDto-read": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "id": {
+                        "example": 1,
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "name": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "Cat",
+                        "type": "string"
+                    },
+                    "description": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "Lazy",
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedBy": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "owner": {
+                        "$ref": "#/components/schemas/User-read"
+                    }
+                },
+                "required": [
+                    "name",
+                    "description"
+                ]
+            },
+            "PetDto-write_patch": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "required": [
+                    "name",
+                    "description"
+                ],
+                "properties": {
+                    "name": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "Cat",
+                        "type": "string"
+                    },
+                    "description": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "Lazy",
+                        "type": "string"
+                    },
+                    "createdBy": {
+                        "example": 1,
+                        "type": "integer"
+                    }
+                }
+            },
+            "PetDto.jsonld-put": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "id": {
+                        "example": 1,
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "name": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "Cat",
+                        "type": "string"
+                    },
+                    "description": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "Lazy",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name",
+                    "description"
+                ]
+            },
+            "PetDto.jsonld-read": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "@context": {
+                        "readOnly": true,
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "@vocab": {
+                                        "type": "string"
+                                    },
+                                    "hydra": {
+                                        "type": "string",
+                                        "enum": [
+                                            "http://www.w3.org/ns/hydra/core#"
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "@vocab",
+                                    "hydra"
+                                ],
+                                "additionalProperties": true
+                            }
+                        ]
+                    },
+                    "@id": {
+                        "readOnly": true,
+                        "type": "string"
+                    },
+                    "@type": {
+                        "readOnly": true,
+                        "type": "string"
+                    },
+                    "id": {
+                        "example": 1,
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "name": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "Cat",
+                        "type": "string"
+                    },
+                    "description": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "Lazy",
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedBy": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "owner": {
+                        "$ref": "#/components/schemas/User.jsonld-read"
+                    }
+                },
+                "required": [
+                    "name",
+                    "description"
+                ]
+            },
+            "PetDto.jsonld-write_patch": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "required": [
+                    "name",
+                    "description"
+                ],
+                "properties": {
+                    "name": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "Cat",
+                        "type": "string"
+                    },
+                    "description": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "Lazy",
+                        "type": "string"
+                    },
+                    "createdBy": {
+                        "example": 1,
+                        "type": "integer"
+                    }
+                }
+            },
+            "User": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "id": {
+                        "readOnly": true,
+                        "type": "integer"
+                    },
+                    "name": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "type": "string"
+                    },
+                    "password": {
+                        "description": "The hashed password",
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createdBy": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "updatedBy": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "pet": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Pet"
+                        }
+                    },
+                    "userIdentifier": {
+                        "readOnly": true,
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name"
+                ]
+            },
+            "User-read": {
+                "type": "object",
+                "description": "",
+                "deprecated": false
+            },
+            "User.jsonld": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "@context": {
+                        "readOnly": true,
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "@vocab": {
+                                        "type": "string"
+                                    },
+                                    "hydra": {
+                                        "type": "string",
+                                        "enum": [
+                                            "http://www.w3.org/ns/hydra/core#"
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "@vocab",
+                                    "hydra"
+                                ],
+                                "additionalProperties": true
+                            }
+                        ]
+                    },
+                    "@id": {
+                        "readOnly": true,
+                        "type": "string"
+                    },
+                    "@type": {
+                        "readOnly": true,
+                        "type": "string"
+                    },
+                    "id": {
+                        "readOnly": true,
+                        "type": "integer"
+                    },
+                    "name": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "type": "string"
+                    },
+                    "password": {
+                        "description": "The hashed password",
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createdBy": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "updatedBy": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "pet": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Pet.jsonld"
+                        }
+                    },
+                    "userIdentifier": {
+                        "readOnly": true,
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name"
+                ]
+            },
+            "User.jsonld-read": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "@context": {
+                        "readOnly": true,
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "@vocab": {
+                                        "type": "string"
+                                    },
+                                    "hydra": {
+                                        "type": "string",
+                                        "enum": [
+                                            "http://www.w3.org/ns/hydra/core#"
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "@vocab",
+                                    "hydra"
+                                ],
+                                "additionalProperties": true
+                            }
+                        ]
+                    },
+                    "@id": {
+                        "readOnly": true,
+                        "type": "string"
+                    },
+                    "@type": {
+                        "readOnly": true,
+                        "type": "string"
+                    }
+                }
+            },
+            "UserDto-read": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "id": {
+                        "example": 1,
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "name": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "John",
+                        "type": "string"
+                    },
+                    "email": {
+                        "maxLength": 255,
+                        "example": "example@mail.ru",
+                        "type": "string"
+                    },
+                    "roles": {
+                        "example": [
+                            "ROLE_USER"
+                        ],
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "name",
+                    "email",
+                    "roles"
+                ]
+            },
+            "UserDto-write": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "required": [
+                    "name",
+                    "password",
+                    "email",
+                    "roles"
+                ],
+                "properties": {
+                    "name": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "John",
+                        "type": "string"
+                    },
+                    "password": {
+                        "maxLength": 255,
+                        "example": "123456",
+                        "type": "string"
+                    },
+                    "email": {
+                        "maxLength": 255,
+                        "example": "example@mail.ru",
+                        "type": "string"
+                    },
+                    "roles": {
+                        "example": [
+                            "ROLE_USER"
+                        ],
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "UserDto.jsonld-read": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "properties": {
+                    "@context": {
+                        "readOnly": true,
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "@vocab": {
+                                        "type": "string"
+                                    },
+                                    "hydra": {
+                                        "type": "string",
+                                        "enum": [
+                                            "http://www.w3.org/ns/hydra/core#"
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "@vocab",
+                                    "hydra"
+                                ],
+                                "additionalProperties": true
+                            }
+                        ]
+                    },
+                    "@id": {
+                        "readOnly": true,
+                        "type": "string"
+                    },
+                    "@type": {
+                        "readOnly": true,
+                        "type": "string"
+                    },
+                    "id": {
+                        "example": 1,
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "name": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "John",
+                        "type": "string"
+                    },
+                    "email": {
+                        "maxLength": 255,
+                        "example": "example@mail.ru",
+                        "type": "string"
+                    },
+                    "roles": {
+                        "example": [
+                            "ROLE_USER"
+                        ],
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "name",
+                    "email",
+                    "roles"
+                ]
+            },
+            "UserDto.jsonld-write": {
+                "type": "object",
+                "description": "",
+                "deprecated": false,
+                "required": [
+                    "name",
+                    "password",
+                    "email",
+                    "roles"
+                ],
+                "properties": {
+                    "name": {
+                        "maxLength": 255,
+                        "pattern": "^([a-zA-Z0-9\\s]*)$",
+                        "example": "John",
+                        "type": "string"
+                    },
+                    "password": {
+                        "maxLength": 255,
+                        "example": "123456",
+                        "type": "string"
+                    },
+                    "email": {
+                        "maxLength": 255,
+                        "example": "example@mail.ru",
+                        "type": "string"
+                    },
+                    "roles": {
+                        "example": [
+                            "ROLE_USER"
+                        ],
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "responses": {},
+        "parameters": {},
+        "examples": {},
+        "requestBodies": {},
+        "headers": {},
+        "securitySchemes": {}
+    },
+    "security": [],
+    "tags": []
+}
