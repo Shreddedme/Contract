@@ -1,0 +1,3 @@
+invokerPackage: 'Bankiru\PetClient'
+srcBasePath: "src"
+variableNamingConvention: "camelCase"
